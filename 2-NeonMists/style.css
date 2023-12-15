@@ -1,0 +1,32 @@
+.neon-mist {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 255, 255, 0.2);
+}
+
+.neon-mist::before,
+.neon-mist::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(0, 255, 255, 0.1), transparent);
+    animation: mist-animation 8s linear infinite;
+}
+
+@keyframes mist-animation {
+    0% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
