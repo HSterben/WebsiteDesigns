@@ -1,0 +1,34 @@
+/* * {
+    cursor: url("default.png"), auto;
+}
+
+input[type="button"]:hover {
+    cursor: url("pointer.png"), auto;
+} */
+
+* {
+    cursor: none;
+}
+
+body {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+input[type="button"] {
+    padding: 40px;
+    width: 300px;
+    background-image: linear-gradient(45deg, lightBlue, black);
+    border-radius: 10px;
+}
+
+#customCursor {
+    position: absolute;
+    pointer-events: none;
+}
+
+#customCursor img {
+    width: 70px;
+    height: 70px;
+}
