@@ -12,5 +12,8 @@ body {
 }
 
 .container {
+    width: 30%;
+    height: 25%;
     margin: 0 auto;
+    text-align: center;
 }
