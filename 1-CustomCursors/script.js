@@ -1,18 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const customCursor = document.getElementById("customCursor");
-    const imageTag = customCursor.querySelector("img");
-    const button1 = document.getElementById("button1");
+const cursorDot = document.querySelector("[data-cursor-dot]");
+const cursorOutline = document.querySelector("[data-cursor-outline]");
 
-    document.addEventListener("mousemove", (e) => {
-        customCursor.style.left = e.pageX + 'px';
-        customCursor.style.top = e.pageY + 'px';
-    });
+const button = document.getElementById("button1");
 
-    button1.addEventListener("mouseenter", () => {
-        imageTag.src = "pointer.png";
-    });
+window.addEventListener("mousemove", function (e) {
 
-    button1.addEventListener("mouseleave", () => {
-        imageTag.src = "default.png";
-    });
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // cursorOutline.style.left = `${posX}px`;
+    // cursorOutline.style.top = `${posY}px`;
+
+    cursorDot.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 200, fill: "forwards" });
+
+    cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+button.addEventListener("mouseenter", function (e) {
+    cursorDot.style.backgroundColor = "black";
+    cursorOutline.style.border = "2px solid hsla(0, 0%, 0%, 0.5)";
+});
+
+button.addEventListener("mouseleave", function (e) {
+    cursorDot.style.backgroundColor = "white";
+    cursorOutline.style.border = "2px solid hsla(0, 0%, 100%, 0.5)";
 });

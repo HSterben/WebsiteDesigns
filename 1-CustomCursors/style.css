@@ -11,24 +11,46 @@ input[type="button"]:hover {
 }
 
 body {
+    color: white;
+    background-color: black;
     text-align: center;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 input[type="button"] {
     padding: 40px;
     width: 300px;
-    background-image: linear-gradient(45deg, lightBlue, black);
+    background-color: white;
     border-radius: 10px;
 }
 
-#customCursor {
-    position: absolute;
+.cursorDot {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+}
+
+.cursorOutline {
+    width: 50px;
+    height: 50px;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.cursorDot,
+.cursorOutline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
     pointer-events: none;
 }
 
+/* For Images
 #customCursor img {
     width: 70px;
     height: 70px;
-}
+} */

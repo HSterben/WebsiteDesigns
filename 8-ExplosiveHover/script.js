@@ -1,18 +1,37 @@
-const enhance = id => {
-    const element = document.getElementById(id),
-        text = element.innerText.split("");
+// const enhance = id => {
+//     const element = document.getElementById(id),
+//         text = element.innerText.split("");
 
-    element.innerText = "";
+//     element.innerText = "";
 
-    text.forEach(letter => {
-        const span = document.createElement("span");
+//     text.forEach(letter => {
+//         const span = document.createElement("span");
 
-        span.className = "letter";
+//         span.className = "letter";
 
-        span.innerText = letter;
-        
-        element.appendChild(span);
-    });
+//         span.innerText = letter;
+
+//         element.appendChild(span);
+//     });
+// }
+
+const enhance = cName => {
+    let elements = Array.from(document.getElementsByClassName(cName));
+
+        elements.forEach(element => {
+            text = element.innerText.split("");
+            element.innerText = "";
+
+            text.forEach(letter => {
+                let span = document.createElement("span");
+
+                span.className = "letter";
+
+                span.innerText = letter;
+
+                element.appendChild(span);
+            });
+        });
 }
 
-enhance("testings");
+enhance("explode");
